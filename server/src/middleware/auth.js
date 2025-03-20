@@ -2,9 +2,8 @@
 const jwt = require('jsonwebtoken')
 
 function authentication(req, res, next) {
-    try {console.log('reqqqqqqqqqqqq ', req)
+    try {
         const token = req.headers.authorization
-        console.log('token:: ', token)
         if (!token) {
             return res.status(400).send({ status: false, message: "token is required" })
         }
